@@ -29,9 +29,7 @@
 #define NAV     9
 #define NAV_MAC 10
 #define FN      11
-
-#define CANARY       12
-#define CANARY_SHIFT 13
+#define ALT_TAB 12
 
 &caps_word {
     continue-list = <UNDERSCORE MINUS BACKSPACE N1 N2 N3 N4 N5 N6 N7 N8 N9 N0>;
@@ -86,18 +84,6 @@
             timeout-ms = <50>;
             key-positions = <12 22>;
             bindings = <&sk LC(LGUI)>;
-        };
-        combo_to_canary {
-            timeout-ms = <50>;
-            key-positions = <36 41>;
-            layers = <0>;
-            bindings = <&to CANARY>;
-        };
-        combo_from_canary {
-            timeout-ms = <50>;
-            key-positions = <36 41>;
-            layers = <8>;
-            bindings = <&to BASE>;
         };
     };
 
@@ -189,6 +175,20 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&bt BT_SEL 1>, <&to BASE>;
+        };
+
+        alt_tab_on: alt_tab_on {
+            label = "alt tab on";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LALT>, <&kp TAB>, <&to ALT_TAB>;
+        };
+        
+        alt_tab_off: alt_tab_off {
+            label = "alt tab off";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LALT>, <&to BASE>;
         };
     };
 
@@ -292,7 +292,7 @@
     &to BASE &none         &none       &kp HOME  &kp END   &none         &none &kp F12  &kp UP   &kp LC(F12) &none    &none
     &none    &kp LG(SPACE) &kp LA(TAB) &kp PG_UP &kp PG_DN &none         &none &kp LEFT &kp DOWN &kp RIGHT   &kp BKSP &none
     &none    &none         &none       &none     &none     &none         &none &none    &none    &none       &kp DEL  &none
-                                               &none &none &none         &kt LCTRL &kt LALT &caps_word
+                                               &none &none &none         &kt LCTRL &alt_tab_on &caps_word
             >;
         };
         
@@ -316,25 +316,16 @@
             >;
         };
 
-        canary {
-            label = "canary";
+        alt_tab {
+            label = "<->";
             bindings = <
-   &none           &kp W    &kp L &kp Y &kp P &kp B     &kp Q &kp F  &kp O     &kp U    &kp SQT  &key_repeat
-   &hmod LGUI LPAR &kp C    &kp R &kp S &kp T &kp G     &kp M &kp N  &kp E     &kp I    &kp A    &hmod LGUI RPAR
-   &kp RALT        &kp LBRC &kp J &kp V &kp D &kp K     &kp X &kp H  &kp COMMA &kp DOT  &kp RBRC &sk LA(LC(LGUI))
-        &sl MEDIA &smod NAV SPACE &sl SYM     &sl NUM  &bksp_hold CANARY_SHIFT BKSP &sl FUN
+    &none &none &none &none &none &none      &none &none        &none &none    &none &none
+    &none &none &none &none &none &none      &none &kp LS(LALT) &none &kp LALT &none &none
+    &none &none &none &none &none &none      &none &none        &none &none    &none &none
+                      &none &none &none      &none &alt_tab_off &none
             >;
         };
-        
-        canary_layer {
-            label = "shift";
-            bindings = <
-   &none    &kp LS(W) &kp LS(L) &kp LS(Y) &kp LS(P) &kp LS(B)     &kp LS(Q) &kp LS(F)  &kp LS(O) &kp LS(U) &kp AT    &key_repeat
-   &kp GRAV &kp LS(C) &kp LS(R) &kp LS(S) &kp LS(T) &kp LS(G)     &kp LS(M) &kp LS(N)  &kp LS(E) &kp LS(I) &kp LS(A) &kp EQUAL
-   &none    &kp LBKT  &kp LS(J) &kp LS(V) &kp LS(D) &kp LS(K)     &kp LS(X) &kp LS(H)  &kp SEMI  &kp COLON &kp RBKT  &sk LA(LC(LGUI))
-                    &sl MEDIA  &smod NAV SPACE &kp MINUS     &kp LS(RET) &sk LSHIFT &sl FUN
-            >;
-        };
+
         
     };
 };
