@@ -49,15 +49,6 @@
             bindings = <&mo>, <&kp>;
             flavor = "tap-preferred";
         };
-        smod_light: special_mods_light {
-            compatible = "zmk,behavior-hold-tap";
-            label = "SPECIAL_MOD_LIGHT";
-            #binding-cells = <2>;
-            tapping-term-ms = <250>;
-            quick-tap-ms = <180>;
-            bindings = <&mo>, <&kp>;
-            flavor = "tap-preferred";
-        };
         hmod: heavy_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HEAVY_MOD";
