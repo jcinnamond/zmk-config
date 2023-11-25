@@ -1,0 +1,56 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+/ {
+    combos {        
+        compatible = "zmk,combos"; 
+        combo_z {            
+            timeout-ms = <50>;            
+            key-positions = <2 3>;
+            layers = <0 1>;
+            bindings = <&kp Z>;
+        };
+        combo_shift_z {            
+            timeout-ms = <50>;            
+            key-positions = <2 3 4>;
+            layers = <0 1>;
+            bindings = <&kp LS(Z)>;
+        };
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <8 9>;
+            bindings = <&kp ESC>;
+        };
+        combo_ctrl {
+            timeout-ms = <50>;
+            key-positions = <14 15 16>;
+            bindings = <&sk LCTRL>;
+        };
+        combo_ctrl_shift {
+            timeout-ms = <50>;
+            key-positions = <13 14 15 16>;
+            bindings = <&sk LS(LCTRL)>;
+        };
+        combo_alt {
+            timeout-ms = <50>;
+            key-positions = <19 20 21>;
+            bindings = <&sk LALT>;
+        };
+        combo_alt_ctrl {
+            timeout-ms = <50>;
+            key-positions = <19 20 21 22>;
+            bindings = <&sk LC(LALT)>;
+        };
+        combo_super_shift { 
+            timeout-ms = <50>;
+            key-positions = <12 23>;
+            bindings = <&sk LS(LGUI)>;
+        };
+        combo_super_ctrl {
+            timeout-ms = <50>;
+            key-positions = <12 22>;
+            bindings = <&sk LC(LGUI)>;
+        };
+    };
+};

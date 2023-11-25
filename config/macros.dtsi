@@ -1,0 +1,51 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+#include "layers.dtsi"
+
+/ {
+  macros {
+        mac_layer: mac_layer {
+            label = "mac";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 2>, <&to BASE_MAC>;
+        };
+        
+        pc_layer: pc_layer {
+            label = "pc";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 1>, <&to BASE>;
+        };
+
+        alt_tab_on: alt_tab_on {
+            label = "alt tab on";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LALT>, <&kp TAB>, <&to ALT_TAB>;
+        };
+        
+        alt_tab_off: alt_tab_off {
+            label = "alt tab off";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LALT>, <&to BASE>;
+        };
+
+        super_tab_on: super_tab_on {
+            label = "super tab on";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LGUI>, <&kp TAB>, <&to SUPER_TAB>;
+        };
+        
+        super_tab_off: super_tab_off {
+            label = "super tab off";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LGUI>, <&to BASE_MAC>;
+        };
+    };
+};

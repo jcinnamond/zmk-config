@@ -1,0 +1,15 @@
+#define BASE      0
+#define BASE_MAC  1
+#define SHIFT     2
+#define SHIFT_MAC 3
+#define MEDIA     4
+#define FUN       5
+
+#define NUM       6
+#define SYM       7
+#define SYM_MAC   8
+#define NAV       9
+#define NAV_MAC   10
+#define FN        11
+#define ALT_TAB   12
+#define SUPER_TAB 13
