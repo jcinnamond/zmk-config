@@ -6,35 +6,30 @@
     behaviors {
         td_colon: tap_dance_colon {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_COLON";
             #binding-cells = <0>;
             tapping-term-ms = <350>;
             bindings = <&kp COLON>, <&kp SEMI>;
         };
         td_dot: tap_dance_dot {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_DOT";
             #binding-cells = <0>;
             tapping-term-ms = <350>;
             bindings = <&kp DOT>, <&kp COMMA>;
         };
         td_quote: tap_dance_quote {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_QUOTE";
             #binding-cells = <0>;
             tapping-term-ms = <350>;
             bindings = <&mt LGUI SQT>, <&kp AT>;
         };
         td_lpar: tap_dance_lpar {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_LPAREN";
             #binding-cells = <0>;
             tapping-term-ms = <350>;
             bindings = <&kp LPAR>, <&kp LBRC>;
         };
         td_rpar: tap_dance_rpar {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_RPAREN";
             #binding-cells = <0>;
             tapping-term-ms = <350>;
             bindings = <&kp RPAR>, <&kp RBRC>;
@@ -42,7 +37,6 @@
         
         smod: special_mods {
             compatible = "zmk,behavior-hold-tap";
-            label = "SPECIAL_MOD";
             #binding-cells = <2>;
             tapping-term-ms = <350>;
             quick-tap-ms = <180>;
@@ -51,7 +45,6 @@
         };
         hmod: heavy_mods {
             compatible = "zmk,behavior-hold-tap";
-            label = "HEAVY_MOD";
             #binding-cells = <2>;
             tapping-term-ms = <350>;
             quick-tap-ms = <0>;
@@ -60,7 +53,6 @@
         };
         bksp_hold: backspace_hold {
             compatible = "zmk,behavior-hold-tap";
-            label = "BKSP HOLD";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <180>;
