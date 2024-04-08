@@ -28,6 +28,12 @@
             layers = <ALT_TAB>;
             bindings = <&alt_tab_off>;
         };
+        combo_esc_super_tab {
+            timeout-ms = <50>;
+            key-positions = <8 9>;
+            layers = <SUPER_TAB>;
+            bindings = <&super_tab_off>;
+        };
         combo_ctrl {
             timeout-ms = <50>;
             key-positions = <14 15 16>;
