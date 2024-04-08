@@ -22,6 +22,12 @@
             key-positions = <8 9>;
             bindings = <&kp ESC>;
         };
+        combo_esc_alt_tab {
+            timeout-ms = <50>;
+            key-positions = <8 9>;
+            layers = <ALT_TAB>;
+            bindings = <&alt_tab_off>;
+        };
         combo_ctrl {
             timeout-ms = <50>;
             key-positions = <14 15 16>;
