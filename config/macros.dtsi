@@ -13,11 +13,18 @@
             bindings = <&bt BT_SEL 2>, <&to BASE_MAC>;
         };
         
-        pc_layer: pc_layer {
+        win_layer: win_layer {
             label = "pc";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&bt BT_SEL 1>, <&to BASE>;
+        };
+
+        linux_layer: linux_layer {
+            label = "pc";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 3>, <&to BASE>;
         };
 
         alt_tab_on: alt_tab_on {
