@@ -57,12 +57,12 @@
         };
         combo_hyper_left {
             timeout-ms = <50>;
-            key-positions = <19 20>;
+            key-positions = <16 17>;
             bindings = <&kp LC(LA(LS(LEFT)))>;
         };
         combo_hyper_right {
             timeout-ms = <50>;
-            key-positions = <20 21>;
+            key-positions = <18 19>;
             bindings = <&kp LC(LA(LS(RIGHT)))>;
         };
         combo_super_shift { 
